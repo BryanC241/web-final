@@ -13,7 +13,7 @@ import Contact from "./component/Contact";
 import bgImage from "./space.jpg" ;
 
 
-
+/*The main file that displays the project and navigates between pages*/
 function App() {
   return (
     <>

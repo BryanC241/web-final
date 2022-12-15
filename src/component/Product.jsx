@@ -19,7 +19,7 @@ const Product = () => {
     };
 
 
-
+/*the function to get fakestore api*/
     useEffect(() => {
         const getProduct = async () => {
             setLoading(true);
@@ -38,7 +38,7 @@ const Product = () => {
             </>
         )
     }
-
+/* Display the selected item*/
     const ShowProduct = () => {
         return (
             <>

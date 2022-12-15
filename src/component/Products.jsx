@@ -5,6 +5,7 @@ import '../comp.css';
 
 const Products = () => {
 
+    /*function to get fakestore api*/
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState(data);
     const [loading, setLoading] = useState(false);
@@ -28,7 +29,7 @@ const Products = () => {
         getProducts();
 
     }, []);
-
+/*skelton should show a placeholder for items while render but didnt work*/
     const Loading = () => {
         return (
             <>
