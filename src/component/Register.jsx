@@ -1,7 +1,7 @@
 import React from "react";
 import '../comp.css';
 
-
+/*static register page using bootstrap*/
 function Register() {
   return (
     <div>

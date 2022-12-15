@@ -1,7 +1,7 @@
 import React from "react";
 import '../comp.css';
 
-
+/*static page that gives more lore to the store*/
 const About = () => {
     return (
         <div>

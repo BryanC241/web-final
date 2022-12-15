@@ -2,7 +2,7 @@ import React from "react";
 
 
 
-
+/*static checkout page using bootstap styling*/
 const Checkout = () => {
     return (
 
