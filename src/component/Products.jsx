@@ -9,6 +9,7 @@ const Products = () => {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState(data);
     const [loading, setLoading] = useState(false);
+    const [search, setSearch] = useState("");
     let componentMounted = true;
 
     useEffect(() => {
@@ -29,7 +30,7 @@ const Products = () => {
         getProducts();
 
     }, []);
-/*skelton should show a placeholder for items while render but didnt work*/
+    /*skelton should show a placeholder for items while render but didnt work*/
     const Loading = () => {
         return (
             <>
@@ -49,19 +50,39 @@ const Products = () => {
         )
     };
 
-    const filterProduct=(cat)=>{
-        const updatedList=data.filter((x)=>x.category===cat)
+    const filterProduct = (cat) => {
+        const updatedList = data.filter((x) => x.category === cat)
         setFilter(updatedList);
     }
+
+    const searchInput = React.useRef(null);
+    useEffect(() => {
+        searchInput.current.focus();
+    }, [search]);
+    const searchProduct = (e) => {
+        setSearch(e);
+        const updatedSearchList = data.filter((x) => {
+            if (e === '') {
+                return x;
+            }
+            else if (x.title.toLowerCase().includes(e.toLowerCase())) {
+                return x;
+            }
+        });
+        setFilter(updatedSearchList);
+    }
+
+
     const ShowProducts = () => {
         return (
             <>
                 <div className="buttons d-flex justify-content-center mb-5 pb-5 ">
-                    <button className="btn btn-outline-light me-2" onClick={()=>setFilter(data)}>ALL</button>
-                    <button className="btn btn-outline-light me-2" onClick={()=>filterProduct("men's clothing")}>Men's clothing</button>
-                    <button className="btn btn-outline-light me-2" onClick={()=>filterProduct("women's clothing")} >Women's clothing</button>
-                    <button className="btn btn-outline-light me-2" onClick={()=>filterProduct("jewelery")}>Jewelery</button>
-                    <button className="btn btn-outline-light me-2" onClick={()=>filterProduct("electronics")}>Electronic</button>
+                    <button className="btn btn-outline-light me-2" onClick={() => setFilter(data)}>ALL</button>
+                    <button className="btn btn-outline-light me-2" onClick={() => filterProduct("men's clothing")}>Men's clothing</button>
+                    <button className="btn btn-outline-light me-2" onClick={() => filterProduct("women's clothing")} >Women's clothing</button>
+                    <button className="btn btn-outline-light me-2" onClick={() => filterProduct("jewelery")}>Jewelery</button>
+                    <button className="btn btn-outline-light me-2" onClick={() => filterProduct("electronics")}>Electronic</button>
+                    <input ref={searchInput} type="text" placeholder="Search" value={search} onChange={(e) => searchProduct(e.target.value)} />
                 </div>
                 {filter.map((product) => {
                     return (
@@ -74,7 +95,7 @@ const Products = () => {
                                         <p className="card-text">
                                             ${product.price}
                                         </p>
-                                        <NavLink to= {`/product/ ${product.id}`} className="btn btn-outline-dark">
+                                        <NavLink to={`/product/ ${product.id}`} className="btn btn-outline-dark">
                                             Buy Now
                                         </NavLink>
                                     </div>
