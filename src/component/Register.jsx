@@ -1,12 +1,15 @@
 import React from "react";
+import '../comp.css';
+
 
 function Register() {
   return (
     <div>
+       <img class="card-img" src="/assets/bg.jpg" alt="background" height="550px" />
       <div className="register">
         <form>
           <div className="mb-3">
-            <label for="userName" className="form-label">
+            <label for="userName" className="shine">
               Name
             </label>
             <input
@@ -15,7 +18,7 @@ function Register() {
               id="userName"
               aria-describedby="userName"
             />
-            <label for="phone" className="form-label">
+            <label for="phone" className="shine">
               Contact No.
             </label>
             <input
@@ -24,7 +27,7 @@ function Register() {
               id="phone"
               aria-describedby="phone"
             />
-            <label for="exampleInputEmail1" className="form-label">
+            <label for="exampleInputEmail1" className="shine">
               Email address
             </label>
             <input
@@ -33,12 +36,12 @@ function Register() {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
             />
-            <div id="emailHelp" className="form-text">
+            <div id="emailHelp" className="shine2">
               We'll never share your email with anyone else.
             </div>
           </div>
           <div className="mb-3">
-            <label for="exampleInputPassword1" className="form-label">
+            <label for="exampleInputPassword1" className="shine">
               Password
             </label>
             <input
@@ -46,7 +49,7 @@ function Register() {
               className="form-control mb-3"
               id="exampleInputPassword1"
             />
-            <label for="exampleConfirmtPassword1" className="form-label">
+            <label for="exampleConfirmtPassword1" className="shine">
               Confirm Password
             </label>
             <input
@@ -62,7 +65,7 @@ function Register() {
               id="exampleCheck1"
               checked
             />
-            <label className="form-check-label" for="exampleCheck1">
+            <label className="shine" for="exampleCheck1">
               Login once registered
             </label>
           </div>

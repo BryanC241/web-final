@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Skeleton from "react-loading-skeleton";
-
+import '../comp.css';
 
 const Products = () => {
 
@@ -55,12 +55,12 @@ const Products = () => {
     const ShowProducts = () => {
         return (
             <>
-                <div className="buttons d-flex justify-content-center mb-5 pb-5">
-                    <button className="btn btn-outline-dark me-2" onClick={()=>setFilter(data)}>ALL</button>
-                    <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("men's clothing")}>Men's clothing</button>
-                    <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("women's clothing")} >Women's clothing</button>
-                    <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("jewelery")}>Jewelery</button>
-                    <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("electronics")}>Electronic</button>
+                <div className="buttons d-flex justify-content-center mb-5 pb-5 ">
+                    <button className="btn btn-outline-light me-2" onClick={()=>setFilter(data)}>ALL</button>
+                    <button className="btn btn-outline-light me-2" onClick={()=>filterProduct("men's clothing")}>Men's clothing</button>
+                    <button className="btn btn-outline-light me-2" onClick={()=>filterProduct("women's clothing")} >Women's clothing</button>
+                    <button className="btn btn-outline-light me-2" onClick={()=>filterProduct("jewelery")}>Jewelery</button>
+                    <button className="btn btn-outline-light me-2" onClick={()=>filterProduct("electronics")}>Electronic</button>
                 </div>
                 {filter.map((product) => {
                     return (
@@ -71,7 +71,7 @@ const Products = () => {
                                     <div className="card-body">
                                         <h5 className="card-title mb-0">{product.title}</h5>
                                         <p className="card-text">
-                                            {product.price}
+                                            ${product.price}
                                         </p>
                                         <NavLink to= {`/product/ ${product.id}`} className="btn btn-outline-dark">
                                             Buy Now
@@ -92,10 +92,10 @@ const Products = () => {
 
     return (
         <div>
-            <div className=" container my-5 py-5">
+            <div className=" container  py-5">
                 <div className="row">
                     <div className="col-12 mb-5">
-                        <h1 className="display-6 fw-bolder text-center" >Latest products</h1>
+                        <h1 className="shine" >Latest products</h1>
                         <hr />
                     </div>
 

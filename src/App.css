@@ -1,6 +1,18 @@
+
 /* Navbar */
 
 .navbar-nav a{
     font-size: 18px;
-    color: red;
+    color: blue;
 }
+.back{
+    background-image: url("white.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    
+    }
+.back2{
+    background-image: url("earth.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    }

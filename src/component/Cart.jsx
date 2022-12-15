@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { addCart, delCart } from "../redux/action";
 
+
 const Cart = () => {
   const state = useSelector((state) => state.handleCart);
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const Cart = () => {
 
   const emptyCart = () => {
     return (
+     
       <div className="px-4 my-5 bg-light rounded-3 py-5">
         <div className="container py-4">
           <div className="row">
@@ -23,6 +25,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
+
     );
   };
   const cartItems = (product) => {
@@ -69,9 +72,8 @@ const Cart = () => {
       <>
         <div className="container">
           <div className="row">
-            <NavLink
-              to="/checkout"
-              className="btn btn-outline-dark mb-5 w-25 mx-auto"
+            <NavLink to="/checkout"
+              className="btn btn-outline-light mb-5 w-25 mx-auto"
             >
               Proceed to Checkout
             </NavLink>

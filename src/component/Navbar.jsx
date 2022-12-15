@@ -1,10 +1,10 @@
 import React from 'react';
-import{ NavLink } from 'react-router-dom';
-import {useSelector} from "react-redux";
+import { NavLink } from 'react-router-dom';
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
 
-    const state =useSelector((state)=> state.handleCart)
+    const state = useSelector((state) => state.handleCart)
 
     return (
         <div>
@@ -39,7 +39,6 @@ const Navbar = () => {
                             </NavLink>
                         </li>
                     </ul>
-                    /*probaby add search bar? */
                     <div className="buttons">
                         <NavLink to="/login" className="btn btn-outline-dark">
                             <i className="fa fa-sign-in me-1"></i> login</NavLink>
