@@ -16,7 +16,7 @@ function Login() {
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              placeholder="indian@gmail.com"
+              placeholder="test@gmail.com"
             />
             <div id="emailHelp" className="form-text">
               We'll never share your email with anyone else.
